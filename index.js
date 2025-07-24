@@ -5,7 +5,7 @@ function convertToCelsius(fahrenheit) {
 function describeTemperature(fahrenheit) {
     const celsius = convertToCelsius(fahrenheit);
     if (celsius < 0) {
-        return "very cold!";
+        return "very cold";
     } else if (celsius < 20) {
         return "cold";
     } else if (celsius < 30) {
@@ -15,3 +15,15 @@ function describeTemperature(fahrenheit) {
     } else if (celsius >= 40) {
         return "very hot";
     }
+
+}
+
+
+function convertAndDescribe(fahrenheit) {
+    const celsius = convertToCelsius(fahrenheit);
+    const description = describeTemperature(fahrenheit);
+    return `The temperature is ${celsius.toFixed(2)}°C, which is considered ${description}.`;
+}
+
+const userInput = prompt("Enter the temperature in Fahrenheit: ");
+alert(convertAndDescribe(userInput));
