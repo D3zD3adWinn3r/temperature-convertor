@@ -19,11 +19,12 @@ function describeTemperature(fahrenheit) {
 }
 
 
-function convertAndDescribe(fahrenheit) {
+const userInput = prompt("Enter the temperature in Fahrenheit: ");
+alert(convertAndDescribe(userInput));
+
+function convertAndDescribe(userInput) {
+    const fahrenheit = parseFloat(userInput);
     const celsius = convertToCelsius(fahrenheit);
     const description = describeTemperature(fahrenheit);
     return `The temperature is ${celsius.toFixed(2)}°C, which is considered ${description}.`;
 }
-
-const userInput = prompt("Enter the temperature in Fahrenheit: ");
-alert(convertAndDescribe(userInput));
